@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    android:paddingLeft="30dp"
+    android:paddingTop="10dp"
+    android:paddingRight="30dp"
+    android:paddingBottom="60dp">
+
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+        style="@style/HANDLE"
+        android:layout_width="64dp"
+        android:layout_height="4dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        style="@style/HEADING3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Your BMI is"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvBmiResult"
+        style="@style/HEADING2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="0"
+        android:textSize="70sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        style="@style/HEADING2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="(Normal)"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/HEADING2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="desc" />
+
+</LinearLayout>

@@ -5,48 +5,107 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="15dp"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".Dashboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/HEADING3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome back,"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/HEADING2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civImg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/bg_gym" />
+    </LinearLayout>
 
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="3"
         android:columnCount="2"
-        android:layout_margin="15dp">
+        android:rowCount="3">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvBmiCalc"
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
+                style="@style/CARD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/bmi_calc"
-                    android:layout_marginBottom="15dp"/>
+                <FrameLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rectangle" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_calculate_24" />
+                </FrameLayout>
 
                 <TextView
+                    style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BMI\nCALCULATOR"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:text="BMI Calculator"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/HEADING3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Calculate your Body Mass Index"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -54,62 +113,103 @@
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
+                style="@style/CARD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/calorie_calc"
-                    android:layout_marginBottom="15dp"/>
+                <FrameLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rectangle" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_local_fire_department_24" />
+                </FrameLayout>
 
                 <TextView
+                    style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CALORIE\nCALCULATOR"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:text="Calorie Calculator"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/HEADING3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Estimate your daily calorie needs"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvWorkoutPlans"
-            android:layout_gravity="fill"
+            android:layout_height="wrap_content"
             android:layout_columnSpan="2"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="10dp">
+            android:layout_gravity="fill"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
+                style="@style/CARD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:padding="30dp">
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/workout"
-                    android:layout_marginRight="20dp"/>
+                <FrameLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rectangle" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_fitness_center_24" />
+                </FrameLayout>
 
                 <TextView
+                    style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WORKOUT\nPLANS"
-                    android:textAlignment="center"
-                    android:textSize="25sp" />
+                    android:text="Workout Plan"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/HEADING3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Personalized workout routines to achieved your goals"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -117,31 +217,51 @@
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
+                style="@style/CARD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:src="@drawable/nutrition_tips"
-                    android:layout_marginBottom="15dp"/>
+                <FrameLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rectangle" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_dining_24" />
+                </FrameLayout>
 
                 <TextView
+                    style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="NUTRITION\nTIPS"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:text="Nutrition Tips"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/HEADING3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Practical advice for healthy eating habits"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -149,37 +269,52 @@
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
+                style="@style/CARD"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginBottom="15dp"
-                    android:src="@drawable/workout_tips" />
+                <FrameLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_rectangle" />
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/baseline_event_note_24" />
+                </FrameLayout>
 
                 <TextView
+                    style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="WORKOUT\nTIPS"
-                    android:textAlignment="center"
-                    android:textSize="20sp" />
+                    android:text="Workout Tips"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/HEADING3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Improve your exercise with expert tips"
+                    android:textSize="14sp" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
-
-
-
-
-
 
     </GridLayout>
 

@@ -5,95 +5,72 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:gravity="center">
+    tools:context=".MainActivity">
 
-        <androidx.cardview.widget.CardView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Background Image -->
+        <ImageView
+            android:id="@+id/fullscreen_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            app:cardElevation="10dp"
-            app:cardCornerRadius="15dp">
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gym_background_vertical" />
 
-            <LinearLayout
+        <!-- Gradient Overlay -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/img_onboarding_gradient" />
+
+        <!-- Buttons and Text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:gravity="bottom|center"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:lineSpacingExtra="5dp"
+                android:text="short description"
+                style="@style/HEADING3" />
+
+            <!-- Buttons -->
+            <Button
+                style="@style/BUTTON"
+                android:id="@+id/btnLogIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="30dp">
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_border"
+                android:text="Get Started"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="LOGIN"
-                    android:textSize="30sp"
-                    android:gravity="center"
-                    android:textStyle="bold"/>
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sign in to continue"
-                    android:textSize="15sp"
-                    android:gravity="center"
-                    android:layout_marginBottom="30dp"/>
-
-                <EditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/rounded_corner"
-                    android:backgroundTint="@color/darkGray"
-                    android:drawableLeft="@drawable/person"
-                    android:drawablePadding="8dp"
-                    android:fontFamily="sans-serif"
-                    android:hint="Username"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="15sp" />
-
-                <EditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:background="@drawable/rounded_corner"
-                    android:layout_marginBottom="20dp"
-                    android:textSize="15sp"
-                    android:padding="10dp"
-                    android:backgroundTint="@color/darkGray"
-                    android:textColorHint="@color/white"
-                    android:textColor="@color/white"
-                    android:drawableLeft="@drawable/password"
-                    android:drawablePadding="8dp"/>
-
-                <Button
-                    android:id="@+id/btnLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rounded_corner"
-                    android:text="LOGIN"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tvRegister"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Don't have an account? Click here"
-                    android:textSize="12sp"
-                    android:gravity="center"
-                    android:layout_marginTop="30dp"/>
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-
+    </FrameLayout>
 
 
 </LinearLayout>

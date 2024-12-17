@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="editTextBackgroundColor" format="color" />
+    <attr name="editTextIconColor" format="color" />
+    <attr name="cardBackgroundColor" format="color" />
+    <attr name="cardIconBackgroundColor" format="color" />
+    <attr name="cardIconColor" format="color" />
+    <attr name="cardSelectorColor" format="color" />
+    <attr name="cardSelectorShadow" format="color" />
+    <attr name="bottomSheetBackgroundColor" format="color" />
+    <attr name="startColor" format="color" />
+    <attr name="endColor" format="color" />
+
+</resources>

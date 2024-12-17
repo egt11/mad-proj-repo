@@ -1,7 +1,72 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Proj" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+    <style name="Base.Theme.Proj" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/dark</item>
+        <item name="colorAccent">@color/primary</item>
+
+
+        <item name="editTextBackgroundColor">@color/fieldDark</item>
+        <item name="editTextIconColor">@color/heading3Dark</item>
+        <item name="cardIconBackgroundColor">@color/cardIconBg</item>
+        <item name="cardIconColor">@color/primary</item>
+        <item name="cardSelectorColor">@color/fieldDark</item>
+        <item name="cardSelectorShadow">@color/cardSelectorShadowDark</item>
+        <item name="bottomSheetBackgroundColor">@color/dark</item>
+        <item name="startColor">@color/startColorDark</item>
+        <item name="endColor">@color/endColorDark</item>
+
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
+    <!--Dark mode-->
+    <style name="SCREEN">
+        <item name="android:background">@color/dark</item>
+    </style>
+
+    <!--    title-->
+    <style name="TITLE">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <!--    heading 2-->
+    <style name="HEADING2">
+        <item name="android:textColor">@color/heading2Dark</item>
+    </style>
+
+    <!--    heading 3-->
+    <style name="HEADING3">
+        <item name="android:textColor">@color/heading3Dark</item>
+    </style>
+
+    <!--    fields-->
+    <style name="FIELD">
+        <item name="android:background">@drawable/et_border</item> <!-- Reference the drawable -->
+        <item name="android:textColorHint">@color/heading3Dark</item>
+    </style>
+
+    <style name="CARD">
+        <item name="android:background">@color/fieldDark</item>
+    </style>
+
+    <!--button-->
+    <style name="BUTTON">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="HANDLE">
+        <item name="android:background">@color/handleDark</item>
+    </style>
+
+
+    <style name="Theme.Proj" parent="Base.Theme.Proj" />
 </resources>
+
+
