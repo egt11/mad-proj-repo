@@ -5,21 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".Dashboard">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
             android:layout_weight="2"
             android:gravity="center_vertical"
             android:orientation="vertical">
@@ -28,7 +25,7 @@
                 style="@style/HEADING3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome back,"
+                android:text="@string/welcome"
                 android:textSize="16sp" />
 
             <TextView
@@ -36,7 +33,6 @@
                 style="@style/HEADING2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -46,13 +42,13 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/bg_gym" />
+            android:src="@drawable/ic_launcher_background" />
     </LinearLayout>
-
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:columnCount="2"
         android:rowCount="3">
 
@@ -61,7 +57,8 @@
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="10dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -75,7 +72,7 @@
                 <FrameLayout
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="12dp">
 
                     <View
                         android:layout_width="match_parent"
@@ -87,13 +84,15 @@
                         android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:src="@drawable/baseline_calculate_24" />
+
                 </FrameLayout>
 
                 <TextView
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BMI Calculator"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/bmi_title"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -101,8 +100,7 @@
                     style="@style/HEADING3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Calculate your Body Mass Index"
+                    android:text="@string/bmi_desc"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -113,7 +111,8 @@
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="10dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -127,7 +126,7 @@
                 <FrameLayout
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="12dp">
 
                     <View
                         android:layout_width="match_parent"
@@ -139,13 +138,15 @@
                         android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:src="@drawable/baseline_local_fire_department_24" />
+
                 </FrameLayout>
 
                 <TextView
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Calorie Calculator"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/calorie_title"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -153,8 +154,7 @@
                     style="@style/HEADING3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Estimate your daily calorie needs"
+                    android:text="@string/calorie_desc"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -165,7 +165,8 @@
             android:layout_height="wrap_content"
             android:layout_columnSpan="2"
             android:layout_gravity="fill"
-            android:layout_margin="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -179,7 +180,7 @@
                 <FrameLayout
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="12dp">
 
                     <View
                         android:layout_width="match_parent"
@@ -197,7 +198,8 @@
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Workout Plan"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/workout_plan_title"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -205,19 +207,19 @@
                     style="@style/HEADING3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Personalized workout routines to achieved your goals"
+                    android:text="@string/workout_plan_desc"
                     android:textSize="14sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cvNutritionTips"
+            android:id="@+id/cvHealthyRecipes"
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -231,7 +233,7 @@
                 <FrameLayout
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="12dp">
 
                     <View
                         android:layout_width="match_parent"
@@ -243,13 +245,15 @@
                         android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:src="@drawable/baseline_dining_24" />
+
                 </FrameLayout>
 
                 <TextView
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nutrition Tips"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/healthy_recipes_title"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -257,8 +261,7 @@
                     style="@style/HEADING3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Practical advice for healthy eating habits"
+                    android:text="@string/healthy_recipes_desc"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -269,7 +272,8 @@
             android:layout_width="0dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-            android:layout_margin="10dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -283,7 +287,7 @@
                 <FrameLayout
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="12dp">
 
                     <View
                         android:layout_width="match_parent"
@@ -295,13 +299,15 @@
                         android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:src="@drawable/baseline_event_note_24" />
+
                 </FrameLayout>
 
                 <TextView
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Workout Tips"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/workout_tips_title"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -309,13 +315,11 @@
                     style="@style/HEADING3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Improve your exercise with expert tips"
+                    android:text="@string/workout_tips_desc"
                     android:textSize="14sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
     </GridLayout>
 
 </LinearLayout>

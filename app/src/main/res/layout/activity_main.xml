@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -13,64 +12,64 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Background Image -->
         <ImageView
             android:id="@+id/fullscreen_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/gym_background_vertical" />
+            android:src="@drawable/img_gym_onboarding" />
 
-        <!-- Gradient Overlay -->
         <View
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_gravity="bottom"
             android:background="@drawable/img_onboarding_gradient" />
 
-        <!-- Buttons and Text -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="16dp"
             android:gravity="bottom|center"
-            android:orientation="vertical"
-            android:paddingBottom="20dp">
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/baseline_logo_dev_24"
+                android:layout_marginBottom="32dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="center"
-                android:text="Title"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
-                android:textSize="50sp"
+                android:textSize="36sp"
                 android:textStyle="bold" />
 
             <TextView
+                style="@style/HEADING3"
                 android:layout_width="wrap_content"
-                android:textSize="16sp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="32dp"
                 android:lineSpacingExtra="5dp"
-                android:text="short description"
-                style="@style/HEADING3" />
+                android:text="@string/tagline"
+                android:textSize="16sp" />
 
-            <!-- Buttons -->
             <Button
-                style="@style/BUTTON"
                 android:id="@+id/btnLogIn"
+                style="@style/BUTTON"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:background="@drawable/btn_border"
-                android:text="Get Started"
+                android:stateListAnimator="@null"
+                android:layout_marginBottom="24dp"
+                android:text="@string/get_started"
                 android:textAllCaps="false"
                 android:textSize="16sp" />
 
         </LinearLayout>
-
     </FrameLayout>
-
 
 </LinearLayout>

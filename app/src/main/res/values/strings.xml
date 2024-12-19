@@ -1,5 +1,77 @@
 <resources>
-    <string name="app_name">Proj</string>
+    <string name="app_name">App Name</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="cm">(cm)</string>
+    <string name="kg">(kg)</string>
+
+    <string name="login_text">Already have an account? <font color="#F97316">Click here</font></string>
+    <string name="register_text">Don\'t have an account? <font color="#F97316">Click here</font></string>
+
+    <string name="hint">0</string>
+
+    <string name="calculate">Calculate</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_up">Sign Up</string>
+
+    <string name="bmi_result">Your BMI is</string>
+    <string name="calorie_result">Your estimated daily calorie needs are</string>
+
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="others">Others</string>
+    <string name="age">Age</string>
+
+    <string name="calorie_others">See how your daily calorie needs change if you alter your activity level</string>
+    <string name="welcome">Welcome back,</string>
+    <string name="bmi_title">BMI Calculator</string>
+    <string name="calorie_title">Calorie Calculator</string>
+    <string name="workout_plan_title">Workout Plan</string>
+    <string name="healthy_recipes_title">Healthy Recipes</string>
+    <string name="workout_tips_title">Workout Tips</string>
+
+    <string name="sign_in_title">Sign In To App Name</string>
+    <string name="tagline">desc/tagline</string>
+
+    <string name="bmi_desc">Calculate your Body Mass Index</string>
+    <string name="calorie_desc">Estimate your daily calorie needs</string>
+    <string name="workout_plan_desc">Personalized workout routines to achieved your goals</string>
+    <string name="healthy_recipes_desc">Practical advice for healthy eating habits</string>
+    <string name="workout_tips_desc">Improve your exercise with expert tips</string>
+
+    <string name="dot">•</string>
+
+    <string name="overview">Overview</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="directions">Directions</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="enter_username">Enter username</string>
+    <string name="create_a_password">Create a password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_up_name">Name</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="take_photo">Click here to take a photo</string>
+    <string name="sign_up_gender">Gender</string>
+    <string name="sign_up_email_address">Email Address</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="sign_up_birthday">Birthday</string>
+    <string name="choose_dob">Choose date of birth</string>
+    <string name="sign_up_address">Address</string>
+    <string name="enter_address">Enter address</string>
+    <string name="sign_up_contact_number">Contact Number</string>
+    <string name="enter_contact_number">Enter contact number</string>
+    <string name="sign_up_hobbies">Hobbies</string>
+    <string name="sign_up_security_questions">Security Questions</string>
+    <string name="activity_level">Activity Level</string>
+    <string name="calories">Calories</string>
+    <string name="routine_outline">Routine Outline</string>
+    <string name="featured">Featured</string>
+    <string name="all_workouts">All Workouts</string>
 
     <string-array name="activity_levels">
         <item>Sedentary (little or no exercise)</item>
@@ -8,9 +80,5 @@
         <item>Very active (hard exercise/sports 6–7 days/week)</item>
         <item>Extra active (very hard exercise/physical job)</item>
     </string-array>
-
-    <string name="login_text">Already have an account? <font color="#F97316">Click here</font></string>
-    <string name="register_text">Don\'t have an account? <font color="#F97316">Click here</font></string>
-
 
 </resources>

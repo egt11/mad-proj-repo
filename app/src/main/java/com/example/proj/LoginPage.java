@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,10 +14,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class LoginPage extends AppCompatActivity {
     TextView tvRegister;
@@ -31,16 +25,9 @@ public class LoginPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        EdgeToEdge.enable(this);
 
         setContentView(R.layout.activity_login);
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         initialize();
     }
@@ -73,7 +60,6 @@ public class LoginPage extends AppCompatActivity {
                         });
                 AlertDialog dialog = builder.create();
                 dialog.show();
-
             }
         });
 
@@ -96,9 +82,7 @@ public class LoginPage extends AppCompatActivity {
                     Intent intent = new Intent(c, Dashboard.class);
                     startActivity(intent);
                     finish();
-                }
-                // default users
-                else if ((username.equals(user1) && password.equals(pass1)) ||
+                } else if ((username.equals(user1) && password.equals(pass1)) ||
                         (username.equals(user2) && password.equals(pass2)) ||
                         (username.equals(user3) && password.equals(pass3))) {
                     Toast.makeText(c, "Logged in Successfully", Toast.LENGTH_SHORT).show();
@@ -110,8 +94,6 @@ public class LoginPage extends AppCompatActivity {
                 etPassword.setText("");
             }
         });
-
-
     }
 
     private void showAlert(String message, String title) {

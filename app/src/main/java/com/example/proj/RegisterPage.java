@@ -2,18 +2,13 @@ package com.example.proj;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,11 +25,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
@@ -53,7 +43,6 @@ public class RegisterPage extends AppCompatActivity {
     ArrayList<CheckBox> hobbyCheckboxes;
     Calendar calendar;
     boolean isQuestionSelectedSame = false;
-
     private static final int CAMERA_REQUEST = 1;
     Button btnCamera, btnRegister;
     ImageView ivImage;
@@ -62,25 +51,17 @@ public class RegisterPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register_page);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        initializeViews();
+        initialize();
         setupDatePicker();
         setupHobbies();
         setupSecurityQuestions();
         setupRegisterButton();
     }
 
-    private void initializeViews() {
+    private void initialize() {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
@@ -99,10 +80,9 @@ public class RegisterPage extends AppCompatActivity {
         hobbyCheckboxes = new ArrayList<>();
         btnRegister = findViewById(R.id.btnRegister);
         tvLogin = findViewById(R.id.tvLogin);
-
-        // camera
         ivImage = findViewById(R.id.ivImage);
         btnCamera = findViewById(R.id.btnCamera);
+
         btnCamera.setOnClickListener(v -> {
             Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(cameraIntent, CAMERA_REQUEST);
@@ -148,41 +128,29 @@ public class RegisterPage extends AppCompatActivity {
     }
 
     private void setupHobbies() {
-        // List of hobbies
-        String[] hobbies = {"Dancing", "Singing", "Gaming", "Sleeping",
-                "Cooking", "Yapping", "Eating", "Writing", "Running", "Woodworking"};
+        String[] hobbies = {"Photography", "Woodworking", "Running", "Hiking", "Dancing",
+                "Coding", "Cooking", "Online Gaming", "Geocaching", "Traveling",};
 
-        // Get the main vertical LinearLayout
         LinearLayout hobbiesContainer = findViewById(R.id.hobbiesContainer);
-
-        // Create a horizontal LinearLayout for each row
         LinearLayout currentRow = null;
-
         for (int i = 0; i < hobbies.length; i++) {
-            // Start a new row every two checkboxes
             if (i % 2 == 0) {
                 currentRow = new LinearLayout(this);
                 currentRow.setOrientation(LinearLayout.HORIZONTAL);
                 hobbiesContainer.addView(currentRow);
             }
 
-            // Create the checkbox
             CheckBox checkBox = new CheckBox(this);
             checkBox.setText(hobbies[i]);
-
-            // Add margins for spacing
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    0, // Width: use 0 for even distribution
+                    0,
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    1f // Weight for equal space distribution
+                    1f
             );
+
             params.setMargins(8, 8, 8, 8);
             checkBox.setLayoutParams(params);
-
-            // Add the checkbox to the current row
             currentRow.addView(checkBox);
-
-            // Add the checkbox to the list (if needed)
             hobbyCheckboxes.add(checkBox);
         }
     }
@@ -190,15 +158,15 @@ public class RegisterPage extends AppCompatActivity {
     private void setupSecurityQuestions() {
         String[] questions = {
                 "Select a security question",
-                "What are you wearing?",
-                "What is the last 4 digits of your social security number?",
-                "What is your favorite security question?",
-                "Where are the bodies hidden?",
-                "Who would you murder if you get one free pass?"
+                "What is your mother's maiden name?",
+                "What was the name of your first pet?",
+                "What was the name of the street you grew up on?",
+                "What is your favorite movie or book?",
+                "What is the name of your favorite teacher?"
         };
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this, R.layout.spinner_item, questions);
+                this, R.layout.item_spinner, questions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         securityQuestion1.setAdapter(adapter);
@@ -241,7 +209,6 @@ public class RegisterPage extends AppCompatActivity {
     }
 
     private boolean validateFields() {
-        // Check for empty fields
         if (isEmpty(etUsername) || isEmpty(etPassword) || isEmpty(etConfirmPassword) ||
                 isEmpty(etFirstName) || isEmpty(etLastName) || isEmpty(etEmail) ||
                 isEmpty(etAddress) || isEmpty(etContact) ||
@@ -250,7 +217,6 @@ public class RegisterPage extends AppCompatActivity {
             return false;
         }
 
-        // passowrd matching
         if (!etPassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
             showAlert("ATTENTION!", "Passwords do not match");
             return false;
@@ -261,7 +227,6 @@ public class RegisterPage extends AppCompatActivity {
             return false;
         }
 
-        // Check if photo is taken
         if (photo == null) {
             showAlert("ATTENTION!", "Please take a photo");
             return false;
@@ -280,6 +245,7 @@ public class RegisterPage extends AppCompatActivity {
                 break;
             }
         }
+
         if (!anyHobbySelected) {
             showAlert("ATTENTION", "Please select at least one hobby");
             return false;
@@ -309,10 +275,8 @@ public class RegisterPage extends AppCompatActivity {
         builder.setTitle("Account Details")
                 .setMessage(generateSummary())
                 .setPositiveButton("Confirm", (dialog, which) -> {
-
                     saveRegistrationData();
                     Toast.makeText(this, "Successfully Registered!", Toast.LENGTH_LONG).show();
-
                     Intent intent = new Intent(RegisterPage.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
@@ -342,26 +306,25 @@ public class RegisterPage extends AppCompatActivity {
 
     private String generateSummary() {
         StringBuilder summary = new StringBuilder();
-        summary.append("USERNAME: ").append(etUsername.getText()).append("\n");
-        summary.append("FIRST NAME: ").append(etFirstName.getText()).append("\n");
-        summary.append("LAST NAME: ").append(etLastName.getText()).append("\n");
-        summary.append("EMAIL: ").append(etEmail.getText()).append("\n");
-        summary.append("DATE OF BIRTH: ").append(tvBday.getText()).append("\n");
+        summary.append("Username: ").append(etUsername.getText()).append("\n");
+        summary.append("First Name: ").append(etFirstName.getText()).append("\n");
+        summary.append("Last Name: ").append(etLastName.getText()).append("\n");
+        summary.append("Email: ").append(etEmail.getText()).append("\n");
+        summary.append("Date of Birth: ").append(tvBday.getText()).append("\n");
         RadioButton selectedGender = findViewById(rgGender.getCheckedRadioButtonId());
-        summary.append("GENDER: ").append(selectedGender.getText()).append("\n");
-        summary.append("ADDRESS: ").append(etAddress.getText()).append("\n");
-        summary.append("CONTACT: ").append(etContact.getText()).append("\n");
+        summary.append("Gender: ").append(selectedGender.getText()).append("\n");
+        summary.append("Address: ").append(etAddress.getText()).append("\n");
+        summary.append("Contact: ").append(etContact.getText()).append("\n");
 
-        summary.append("HOBBIES: ");
+        summary.append("Hobbies: ");
         for (CheckBox checkBox : hobbyCheckboxes) {
             if (checkBox.isChecked()) {
                 summary.append(checkBox.getText()).append(", ");
             }
         }
-        summary.setLength(summary.length() - 2); // Remove last comma
+        summary.setLength(summary.length() - 2);
         summary.append("\n");
-
-        summary.append("SECURITY QUESTIONS:\n");
+        summary.append("Security Questions:\n");
         summary.append("Q1: ").append(securityQuestion1.getSelectedItem().toString()).append("\n");
         summary.append("Q2: ").append(securityQuestion2.getSelectedItem().toString()).append("\n");
         summary.append("Q3: ").append(securityQuestion3.getSelectedItem().toString()).append("\n");
@@ -376,6 +339,4 @@ public class RegisterPage extends AppCompatActivity {
                 .setPositiveButton("OK", null)
                 .show();
     }
-
-
 }

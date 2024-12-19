@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">#F97316</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
-
-    <!--    -->
-    <color name="primary">#F97316</color>
+    <color name="green">#84CC16</color>
+    <color name="orange">#F97316</color>
+    <color name="red">#EF4444</color>
+    <color name="blue">#2563EB</color>
     <color name="cardIconBg">#1AFF6E41</color>
 
-    <!--    -->
-    <color name="green">#84CC16</color> <!-- Green -->
-    <color name="orange">#F97316</color> <!-- Orange -->
-    <color name="red">#EF4444</color> <!-- Red -->
-    <color name="blue">#2563EB</color> <!-- Blue -->
-
-
-    <!--    light mode-->
+    <!--light mode-->
     <color name="heading2Light">#111214</color>
     <color name="heading3Light">#676C75</color>
     <color name="fieldLight">#F3F3F4</color>
@@ -23,7 +18,7 @@
     <color name="startColorLight">#FFFFFFFF</color>
     <color name="endColorLight">#00FFFFFF</color>
 
-    <!--    dark-->
+    <!--dark-->
     <color name="dark">#111214</color>
     <color name="heading2Dark">#FFFFFF</color>
     <color name="heading3Dark">#9EA0A5</color>
@@ -32,6 +27,4 @@
     <color name="cardSelectorShadowDark">#7C2D12</color>
     <color name="endColorDark">#88111214</color>
     <color name="startColorDark">#111214</color>
-
-
 </resources>

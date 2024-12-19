@@ -38,7 +38,6 @@ public class CalorieCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_calorie_calculator);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -57,9 +56,8 @@ public class CalorieCalculator extends AppCompatActivity {
         cvMale = findViewById(R.id.cvMale);
         cvFemale = findViewById(R.id.cvFemale);
         btnCalculate = findViewById(R.id.btnCalculate);
-
-        // go back
         ivBackIcon = findViewById(R.id.ivBackIcon);
+
         ivBackIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +65,6 @@ public class CalorieCalculator extends AppCompatActivity {
             }
         });
 
-        // gender selector
         cvMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +73,7 @@ public class CalorieCalculator extends AppCompatActivity {
                 cvFemale.setSelected(false);
             }
         });
+
         cvFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,21 +124,18 @@ public class CalorieCalculator extends AppCompatActivity {
                     tlCalorieInfo = view1.findViewById(R.id.tlCalorieInfo);
                     tlCalorieInfo.removeAllViews(); // clean the table
 
-                    // header row
                     headerRow = new TableRow(CalorieCalculator.this);
                     TableRow.LayoutParams params = new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f);
 
-                    // 1st col
                     headerActivity = new TextView(CalorieCalculator.this);
-                    headerActivity.setText("Activity Level");
+                    headerActivity.setText(R.string.activity_level);
                     headerActivity.setTypeface(headerActivity.getTypeface(), Typeface.BOLD);
                     headerActivity.setPadding(16, 8, 16, 8);
                     headerActivity.setLayoutParams(params);
                     headerRow.addView(headerActivity);
 
-                    // 2nd col
                     headerCalories = new TextView(CalorieCalculator.this);
-                    headerCalories.setText("Calories");
+                    headerCalories.setText(R.string.calories);
                     headerCalories.setTypeface(headerCalories.getTypeface(), Typeface.BOLD);
                     headerCalories.setPadding(16, 8, 16, 8);
                     headerCalories.setLayoutParams(params);
@@ -148,7 +143,6 @@ public class CalorieCalculator extends AppCompatActivity {
 
                     tlCalorieInfo.addView(headerRow);
 
-                    // rows
                     for (int i = 0; i < activityLevels.length; i++) {
                         row = new TableRow(CalorieCalculator.this);
 

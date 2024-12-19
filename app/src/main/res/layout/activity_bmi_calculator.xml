@@ -5,14 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".BmiCalculator">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivBackIcon"
@@ -27,23 +26,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="BMI Calculator"
+            android:text="@string/bmi_title"
             android:textSize="20sp"
             android:textStyle="bold" />
-    </RelativeLayout>
 
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginBottom="8dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -59,8 +58,7 @@
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Height"
+                    android:text="@string/height"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -69,8 +67,7 @@
                     style="@style/FIELD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:hint="0"
+                    android:hint="@string/hint"
                     android:inputType="numberDecimal"
                     android:textSize="40sp"
                     android:textStyle="bold" />
@@ -79,17 +76,15 @@
                     style="@style/HEADING3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(cm)"
+                    android:text="@string/cm"
                     android:textSize="16sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp">
 
@@ -105,8 +100,7 @@
                     style="@style/HEADING2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Weight"
+                    android:text="@string/weight"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -115,8 +109,7 @@
                     style="@style/FIELD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:hint="0"
+                    android:hint="@string/hint"
                     android:inputType="numberDecimal"
                     android:textSize="40sp"
                     android:textStyle="bold" />
@@ -125,7 +118,7 @@
                     style="@style/HEADING3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="(kg)"
+                    android:text="@string/kg"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -142,13 +135,11 @@
             style="@style/BUTTON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
             android:background="@drawable/btn_border"
-            android:text="Calculate"
+            android:stateListAnimator="@null"
+            android:text="@string/calculate"
             android:textAllCaps="false"
             android:textSize="16sp" />
-
     </LinearLayout>
-
 
 </LinearLayout>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -30,15 +29,14 @@
                 android:layout_height="350dp"
                 android:background="@drawable/img_setup_gradient" />
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="140dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
@@ -51,7 +49,8 @@
                     style="@style/TITLE"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sign In To Title"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/sign_up"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -60,16 +59,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="40dp"
-                    android:text="desc/tagline"
+                    android:text="@string/tagline"
                     android:textSize="16sp" />
-
 
                 <TextView
                     style="@style/HEADING2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Username"
+                    android:text="@string/username"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -79,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Enter username"
+                    android:hint="@string/enter_username"
                     android:textSize="16sp" />
 
                 <TextView
@@ -87,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Password"
+                    android:text="@string/password"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -97,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/et_border"
-                    android:hint="Create a password"
+                    android:hint="@string/create_a_password"
                     android:inputType="textPassword"
                     android:textSize="16sp" />
 
@@ -107,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Confirm password"
+                    android:hint="@string/confirm_password"
                     android:inputType="textPassword"
                     android:textSize="16sp" />
 
@@ -116,7 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Name"
+                    android:text="@string/sign_up_name"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -126,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/et_border"
-                    android:hint="First name"
+                    android:hint="@string/first_name"
                     android:textSize="16sp" />
 
                 <EditText
@@ -135,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Last name"
+                    android:hint="@string/last_name"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -153,7 +151,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/btn_border"
-                    android:text="Click here to take a photo"
+                    android:text="@string/take_photo"
                     android:textAllCaps="false"
                     android:textSize="16sp" />
 
@@ -162,7 +160,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Gender"
+                    android:text="@string/sign_up_gender"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -179,7 +177,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Male"
+                        android:text="@string/male"
                         android:textSize="16sp" />
 
                     <RadioButton
@@ -188,7 +186,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Female"
+                        android:text="@string/female"
                         android:textSize="16sp" />
 
                     <RadioButton
@@ -197,7 +195,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Others"
+                        android:text="@string/others"
                         android:textSize="16sp" />
                 </RadioGroup>
 
@@ -206,7 +204,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Email Address"
+                    android:text="@string/sign_up_email_address"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -216,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Enter email address"
+                    android:hint="@string/enter_email_address"
                     android:textSize="16sp" />
 
                 <TextView
@@ -224,7 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Birthday"
+                    android:text="@string/sign_up_birthday"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -234,7 +232,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Choose date of birth"
+                    android:hint="@string/choose_dob"
                     android:textSize="16sp" />
 
                 <TextView
@@ -242,7 +240,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Address"
+                    android:text="@string/sign_up_address"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -252,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Enter address"
+                    android:hint="@string/enter_address"
                     android:textSize="16sp" />
 
                 <TextView
@@ -260,7 +258,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Contact Number"
+                    android:text="@string/sign_up_contact_number"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -270,7 +268,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:background="@drawable/et_border"
-                    android:hint="Enter contact number"
+                    android:hint="@string/enter_contact_number"
                     android:textSize="16sp" />
 
                 <TextView
@@ -278,7 +276,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Hobbies"
+                    android:text="@string/sign_up_hobbies"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -294,7 +292,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Security Questions"
+                    android:text="@string/sign_up_security_questions"
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
@@ -302,27 +300,28 @@
                     android:id="@+id/securityQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="18dp" />
+                    android:layout_marginBottom="16dp" />
 
                 <Spinner
                     android:id="@+id/securityQuestion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="18dp" />
+                    android:layout_marginBottom="16dp" />
 
                 <Spinner
                     android:id="@+id/securityQuestion3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="18dp" />
+                    android:layout_marginBottom="16dp" />
 
                 <Button
                     android:id="@+id/btnRegister"
                     style="@style/BUTTON"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/btn_border"
-                    android:text="Submit"
+                    android:text="@string/submit"
                     android:textAllCaps="false"
                     android:textSize="16sp" />
 
@@ -331,15 +330,13 @@
                     style="@style/HEADING3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="32dp"
                     android:gravity="center"
                     android:text="@string/login_text"
                     android:textSize="14sp" />
-            </LinearLayout>
 
+            </LinearLayout>
         </FrameLayout>
     </ScrollView>
-
 
 </LinearLayout>

@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Proj"
         tools:targetApi="31">
         <activity
+            android:name=".WorkoutPlanDetails"
+            android:exported="false" />
+        <activity
+            android:name=".WorkoutPlan"
+            android:exported="false" />
+        <activity
+            android:name=".WorkoutTips"
+            android:exported="false" />
+        <activity
+            android:name=".RecipeDetails"
+            android:exported="false" />
+        <activity
+            android:name=".RecipePage"
+            android:exported="false" />
+        <activity
             android:name=".CalorieCalculator"
             android:exported="false" />
         <activity

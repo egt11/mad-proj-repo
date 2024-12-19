@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -21,7 +20,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Dashboard extends AppCompatActivity {
 
-    CardView cvBmiCalc, cvCalorieCalc, cvWorkoutPlans, cvNutritionTips, cvWorkoutTips;
+    CardView cvBmiCalc, cvCalorieCalc, cvWorkoutPlans, cvHealthyRecipes, cvWorkoutTips;
     TextView tvName;
     CircleImageView civImg;
 
@@ -35,7 +34,7 @@ public class Dashboard extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        
+
         initialize();
     }
 
@@ -43,9 +42,8 @@ public class Dashboard extends AppCompatActivity {
         cvBmiCalc = findViewById(R.id.cvBmiCalc);
         cvCalorieCalc = findViewById(R.id.cvCalorieCalc);
         cvWorkoutPlans = findViewById(R.id.cvWorkoutPlans);
-        cvNutritionTips = findViewById(R.id.cvNutritionTips);
+        cvHealthyRecipes = findViewById(R.id.cvHealthyRecipes);
         cvWorkoutTips = findViewById(R.id.cvWorkoutTips);
-
         tvName = findViewById(R.id.tvName);
         civImg = findViewById(R.id.civImg);
 
@@ -54,7 +52,7 @@ public class Dashboard extends AppCompatActivity {
         String lastName = prefs.getString("lastName", "");
         String encodedImage = prefs.getString("photo", "");
 
-        tvName.setText(firstName + " " + lastName + "!");
+        tvName.setText(String.format("%s %s!", firstName, lastName));
 
         if (!encodedImage.isEmpty()) {
             byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
@@ -77,7 +75,29 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        cvHealthyRecipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, RecipePage.class);
+                startActivity(intent);
+            }
+        });
+
+        cvWorkoutTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, WorkoutTips.class);
+                startActivity(intent);
+            }
+        });
+
+        cvWorkoutPlans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, WorkoutPlan.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
 }
