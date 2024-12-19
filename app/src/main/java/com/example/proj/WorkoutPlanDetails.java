@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +22,10 @@ public class WorkoutPlanDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+        WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView())
+                .setAppearanceLightStatusBars(false);
+
         setContentView(R.layout.activity_workout_plan_content);
 
         String workoutName = getIntent().getStringExtra("name");

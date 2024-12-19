@@ -36,7 +36,6 @@
                 android:id="@+id/tvWorkoutName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Strength"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -46,9 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Build your muscles bigger stronger with this exercise. Train everyday to get bulky."
                 android:textColor="@android:color/white"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/tvDetailMinutes"
@@ -56,9 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/border_rounded"
-                android:text="25min"
                 android:textColor="@android:color/white"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 

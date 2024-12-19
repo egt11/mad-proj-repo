@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 
 public class RecipeDetails extends AppCompatActivity {
     TextView tvRecipeName, tvCalories, tvTime, tvOverview, tvIngredients, tvDirections;
@@ -18,6 +19,9 @@ public class RecipeDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+        WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView())
+                .setAppearanceLightStatusBars(false);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             getWindow().setNavigationBarContrastEnforced(false);

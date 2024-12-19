@@ -71,14 +71,14 @@ public class WorkoutPlan extends AppCompatActivity {
         featuredRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         List<WorkoutPlanModel> featuredWorkouts = new ArrayList<>();
-        featuredWorkouts.add(new WorkoutPlanModel("Intro to Plyometrics", 9, "Hopping and jumping routines can help improve our explosiveness and efficiency while strengthening our bones. This routine is perfect for an athlete who's new to the world of plyos.",
-                "Box Jumps - down, Double Leg Hops Laterally Over, 3 Direction Hops, Alternating Single Leg Hops, Out-Ins Off Step", R.drawable.workout_plyos));
         featuredWorkouts.add(new WorkoutPlanModel("Plank Circuit", 10, "Love planks? We've got all our fun variations here in one place, Maximize your core stability with this fun routine!",
                 "Plank Kick Outs, Side Planks with Rotations, Forward Plank Slides", R.drawable.workout_plank));
-        featuredWorkouts.add(new WorkoutPlanModel("Fast Foot Mobility", 5, "This is a great, quick way to loosen or warm up the muscles of your feet and ankles. Don't underestimate these short routines. They help make your next workout strong from the ground up.",
-                "Toe Yoga, Toe Spreading, Toe Raise and Clench, Arch Raise", R.drawable.workout_fast_foot));
         featuredWorkouts.add(new WorkoutPlanModel("Glute and Core Strength", 20, "This is a fun way to wrok the muscle that keep us stable. The glutes align the lower leg during workouts and the core aligns the torso. Build you stability and strength with this fun and fast pace program.",
                 "Lateral Toe Taps, Shifting Forward Plank, Single Leg Bridge, Side Planks with Rotations, Supine Scissor Kicks", R.drawable.workout_glute_core));
+        featuredWorkouts.add(new WorkoutPlanModel("Intro to Plyometrics", 9, "Hopping and jumping routines can help improve our explosiveness and efficiency while strengthening our bones. This routine is perfect for an athlete who's new to the world of plyos.",
+                "Box Jumps - down, Double Leg Hops Laterally Over, 3 Direction Hops, Alternating Single Leg Hops, Out-Ins Off Step", R.drawable.workout_plyos));
+        featuredWorkouts.add(new WorkoutPlanModel("Hip Strength Routine", 20, "Our hip muscles support structures all the way through our kinetic chain. This routine has just 1 set of each exercise. You'll breeze through it while building some serious hip strength.",
+                "Side Leg Raises, 3 Way Side Plank, Lateral Band Walks Around, Single Leg Squats to Chair, Forward Step Down, Standing Clamshell, Side Plank with Hip Abduction", R.drawable.workout_hip));
 
         FeaturedWorkoutAdapter featuredAdapter = new FeaturedWorkoutAdapter(featuredWorkouts);
         featuredRecyclerView.setAdapter(featuredAdapter);
@@ -121,7 +121,6 @@ public class WorkoutPlan extends AppCompatActivity {
                 Intent intent = new Intent(WorkoutPlan.this, WorkoutPlanDetails.class);
                 intent.putExtra("name", plan.getName());
                 intent.putExtra("minutes", plan.getMinutes());
-//                intent.putExtra("movements", plan.getMovements());
                 intent.putExtra("description", plan.getDescription());
                 intent.putExtra("exercises", plan.getExercises());
                 intent.putExtra("image", plan.getImage());
@@ -173,7 +172,6 @@ public class WorkoutPlan extends AppCompatActivity {
                 Intent intent = new Intent(WorkoutPlan.this, WorkoutPlanDetails.class);
                 intent.putExtra("name", plan.getName());
                 intent.putExtra("minutes", plan.getMinutes());
-//                intent.putExtra("movements", plan.getMovements());
                 intent.putExtra("description", plan.getDescription());
                 intent.putExtra("exercises", plan.getExercises());
                 intent.putExtra("image", plan.getImage());
