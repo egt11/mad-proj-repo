@@ -11,4 +11,5 @@
     <attr name="startColor" format="color" />
     <attr name="endColor" format="color" />
     <attr name="containerBackgroundColor" format="color" />
+    <attr name="containerBackgroundColorRecipe" format="color" />
 </resources>

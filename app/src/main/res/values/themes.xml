@@ -13,6 +13,7 @@
         <item name="startColor">@color/startColorLight</item>
         <item name="endColor">@color/endColorLight</item>
         <item name="containerBackgroundColor">@color/white</item>
+        <item name="containerBackgroundColorRecipe">@color/white</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 

@@ -91,7 +91,7 @@ public class RegisterPage extends AppCompatActivity {
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(RegisterPage.this, Dashboard.class);
+                Intent i = new Intent(RegisterPage.this, LoginPage.class);
                 startActivity(i);
             }
         });
@@ -277,7 +277,7 @@ public class RegisterPage extends AppCompatActivity {
                 .setPositiveButton("Confirm", (dialog, which) -> {
                     saveRegistrationData();
                     Toast.makeText(this, "Successfully Registered!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(RegisterPage.this, MainActivity.class);
+                    Intent intent = new Intent(RegisterPage.this, LoginPage.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();

@@ -38,7 +38,7 @@
     <string name="bmi_desc">Calculate your Body Mass Index</string>
     <string name="calorie_desc">Estimate your daily calorie needs</string>
     <string name="workout_plan_desc">Personalized workout routines to achieved your goals</string>
-    <string name="healthy_recipes_desc">Practical advice for healthy eating habits</string>
+    <string name="healthy_recipes_desc">Healthy recipes for healthy eating habits</string>
     <string name="workout_tips_desc">Improve your exercise with expert tips</string>
 
     <string name="dot">•</string>
